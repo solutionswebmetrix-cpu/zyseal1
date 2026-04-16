@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import { CheckCircle2, Award, Users, Target } from 'lucide-react';
 
 const About = () => {
-  // const stats = [
-  //   { icon: <Award className="w-6 h-6" />, label: "Certified Excellence", text: "ISO 9001:2015" },
-  //   { icon: <Users className="w-6 h-6" />, label: "Expert Team", text: "50+ Professionals" },
-  // ];
+  const stats = [
+    { icon: <Award className="w-6 h-6" />, label: "Certified Excellence", text: "ISO 9001:2015" },
+    { icon: <Users className="w-6 h-6" />, label: "Expert Team", text: "50+ Professionals" },
+  ];
 
   const benefits = [
     "Premium Quality Materials",
