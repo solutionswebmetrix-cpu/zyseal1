@@ -1,21 +1,41 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Zap } from 'lucide-react';
-import bannerVideo from '../assets/banner2.mp4';
+import heroPoster from '../assets/hero.png';
 
 const Hero = () => {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.defaultMuted = true;
+      videoRef.current.muted = true;
+      videoRef.current.play().catch(error => {
+        console.error("Video play failed:", error);
+      });
+    }
+  }, []);
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-zyseal-navy">
       {/* Background Video */}
       <div className="absolute inset-0 z-0">
         <video 
+          ref={videoRef}
           autoPlay 
           loop 
           muted 
           playsInline 
+          webkit-playsinline="true"
+          x5-playsinline="true"
+          preload="auto"
+          poster={heroPoster}
           className="w-full h-full object-cover opacity-60"
+          style={{ background: '#000' }}
         >
-          <source src={bannerVideo} type="video/mp4" />
+          <source src="/banner2.mp4" type="video/mp4" />
+          {/* Fallback for production paths */}
+          <source src="./banner2.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-zyseal-navy via-zyseal-navy/80 to-transparent"></div>
