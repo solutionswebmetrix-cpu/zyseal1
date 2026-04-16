@@ -57,7 +57,7 @@ const Hero = () => {
               <span className="text-sm font-semibold text-white">Premium Industrial Solutions</span>
             </motion.div> */}
             
-            <h1 className="text-2xl md:text-3xl lg:text-5xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
               {"Innovative Waterproofing & Industrial Flooring".split(" ").map((word, i) => (
                 <motion.span
                   key={i}
@@ -75,31 +75,22 @@ const Hero = () => {
               ))}
             </h1>
             
-            <p className="text-lg md:text-xl text-white/80 mb-8 max-w-xl leading-relaxed">
+            <p className="text-base md:text-lg lg:text-xl text-white/80 mb-8 max-w-xl leading-relaxed">
               Zyseal provides high-performance waterproofing, concrete repair, and industrial flooring solutions. We bring excellence to every project with cutting-edge technology.
             </p>
             
-            {/* <div className="flex flex-wrap gap-4 mb-12">
-              <button className="btn-primary flex items-center gap-2 group py-3 px-8 text-base">
-                Get a Quote <ArrowRight size={20} className="transition-transform group-hover:translate-x-1" />
-              </button>
-              <button className="px-8 py-3 border-2 border-white/30 text-white rounded-full font-semibold transition-all duration-300 hover:bg-white hover:text-zyseal-navy hover:shadow-lg backdrop-blur-sm">
-                Explore Services
-              </button>
-            </div> */}
-
-            <div className="grid grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8">
               <div className="flex flex-col gap-1">
-                <span className="text-3xl font-bold text-white">15+</span>
-                <span className="text-sm text-white/90">Years Experience</span>
+                <span className="text-2xl md:text-3xl font-bold text-white">15+</span>
+                <span className="text-xs md:text-sm text-white/90">Years Experience</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-3xl font-bold text-white">500+</span>
-                <span className="text-sm text-white/90">Projects Done</span>
+                <span className="text-2xl md:text-3xl font-bold text-white">500+</span>
+                <span className="text-xs md:text-sm text-white/90">Projects Done</span>
               </div>
               <div className="flex flex-col gap-1">
-                <span className="text-3xl font-bold text-white">100%</span>
-                <span className="text-sm text-white/90">Satisfaction</span>
+                <span className="text-2xl md:text-3xl font-bold text-white">100%</span>
+                <span className="text-xs md:text-sm text-white/90">Satisfaction</span>
               </div>
             </div>
           </motion.div>

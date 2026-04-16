@@ -36,31 +36,31 @@ const Industries = () => {
   };
 
   return (
-    <section id="industries" className="py-32 px-6 bg-white relative overflow-hidden">
+    <section id="industries" className="py-20 md:py-32 px-4 md:px-6 bg-white relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none opacity-40">
-        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[500px] h-[500px] bg-zyseal-blue/5 rounded-full blur-[120px]"></div>
-        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[500px] h-[500px] bg-zyseal-red/5 rounded-full blur-[120px]"></div>
+        <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-zyseal-blue/5 rounded-full blur-[80px] md:blur-[120px]"></div>
+        <div className="absolute top-1/2 right-0 -translate-y-1/2 w-[300px] h-[300px] md:w-[500px] md:h-[500px] bg-zyseal-red/5 rounded-full blur-[80px] md:blur-[120px]"></div>
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-12 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="flex items-center justify-center gap-3 mb-4"
           >
-            <span className="w-8 h-[2px] bg-zyseal-red"></span>
-            <span className="text-zyseal-red font-bold tracking-[0.2em] uppercase text-xs">Industries We Serve</span>
-            <span className="w-8 h-[2px] bg-zyseal-red"></span>
+            <span className="w-6 md:w-8 h-[2px] bg-zyseal-red"></span>
+            <span className="text-zyseal-red font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs">Industries We Serve</span>
+            <span className="w-6 md:w-8 h-[2px] bg-zyseal-red"></span>
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-5xl md:text-6xl font-bold text-zyseal-navy tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-zyseal-navy tracking-tight"
           >
             Versatile <span className="text-zyseal-red italic">Solutions</span> for Every Sector
           </motion.h2>
@@ -71,7 +71,7 @@ const Industries = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8"
         >
           {industries.map((industry, index) => (
             <motion.div
@@ -81,15 +81,15 @@ const Industries = () => {
                 y: -15,
                 transition: { duration: 0.4, ease: "circOut" }
               }}
-              className="bg-[#F8F9FB] p-10 rounded-[2.5rem] border border-transparent flex flex-col items-center justify-center text-center group hover:bg-white hover:border-zyseal-red/10 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition-all duration-500 cursor-pointer h-[240px]"
+              className="bg-[#F8F9FB] p-8 md:p-10 rounded-[2rem] md:rounded-[2.5rem] border border-transparent flex flex-col items-center justify-center text-center group hover:bg-white hover:border-zyseal-red/10 hover:shadow-[0_20px_50px_rgba(0,0,0,0.06)] transition-all duration-500 cursor-pointer h-[200px] md:h-[240px]"
             >
-              <div className="relative mb-6">
+              <div className="relative mb-4 md:mb-6">
                 <div className="absolute inset-0 bg-zyseal-red/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative w-16 h-16 rounded-2xl bg-white text-zyseal-navy group-hover:bg-zyseal-navy group-hover:text-white flex items-center justify-center shadow-sm transition-all duration-500 group-hover:rotate-[10deg]">
-                  {React.cloneElement(industry.icon, { size: 28 })}
+                <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl bg-white text-zyseal-navy group-hover:bg-zyseal-navy group-hover:text-white flex items-center justify-center shadow-sm transition-all duration-500 group-hover:rotate-[10deg]">
+                  {React.cloneElement(industry.icon, { size: 24, className: "md:w-[28px] md:h-[28px]" })}
                 </div>
               </div>
-              <h3 className="font-bold text-zyseal-navy text-sm md:text-base leading-tight group-hover:text-zyseal-red transition-colors duration-300">
+              <h3 className="font-bold text-zyseal-navy text-xs md:text-base leading-tight group-hover:text-zyseal-red transition-colors duration-300">
                 {industry.name}
               </h3>
             </motion.div>

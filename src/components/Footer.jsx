@@ -14,16 +14,16 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.7, ease: "easeOut" }}
-          className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-16"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 mb-16"
         >
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.1, duration: 0.7, ease: "easeOut" }}
-            className="col-span-1 lg:col-span-1"
+            className="col-span-1 lg:col-span-1 text-center sm:text-left"
           >
-            <a href="#" className="flex items-center gap-2 mb-8">
+            <a href="#" className="flex items-center justify-center sm:justify-start gap-2 mb-8">
               <div className="w-10 h-10 bg-zyseal-red rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-xl">Z</span>
               </div>
@@ -32,7 +32,7 @@ const Footer = () => {
             <p className="text-white/60 leading-relaxed mb-8">
               Premium industrial solutions for waterproofing, flooring, and concrete restoration. Protecting infrastructure with innovation and quality.
             </p>
-            <div className="flex gap-4">
+            <div className="flex justify-center sm:justify-start gap-4">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
                 <a 
                   key={i} 
@@ -50,12 +50,13 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.2, duration: 0.7, ease: "easeOut" }}
+            className="text-center sm:text-left"
           >
             <h4 className="text-xl font-bold mb-8">Quick Links</h4>
             <ul className="space-y-4">
               {['Home', 'About Us', 'Projects', 'Industries', 'Contact'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-white/60 hover:text-zyseal-red flex items-center gap-2 transition-colors group">
+                  <a href="#" className="text-white/60 hover:text-zyseal-red flex items-center justify-center sm:justify-start gap-2 transition-colors group">
                     <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item}
                   </a>
@@ -69,12 +70,13 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
+            className="text-center sm:text-left"
           >
             <h4 className="text-xl font-bold mb-8">Our Services</h4>
             <ul className="space-y-4">
               {['Waterproofing', 'Industrial Flooring', 'Concrete Repair', 'Joint Sealing', 'Thermal Insulation'].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-white/60 hover:text-zyseal-red flex items-center gap-2 transition-colors group">
+                  <a href="#" className="text-white/60 hover:text-zyseal-red flex items-center justify-center sm:justify-start gap-2 transition-colors group">
                     <ArrowUpRight size={14} className="opacity-0 group-hover:opacity-100 transition-opacity" />
                     {item}
                   </a>
@@ -88,10 +90,11 @@ const Footer = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ delay: 0.4, duration: 0.7, ease: "easeOut" }}
+            className="text-center sm:text-left"
           >
             <h4 className="text-xl font-bold mb-8">Contact Info</h4>
             <ul className="space-y-6">
-              <li className="flex gap-4">
+              <li className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                 <div className="text-zyseal-red mt-1">
                   <ArrowUpRight size={18} />
                 </div>
@@ -100,7 +103,7 @@ const Footer = () => {
                   <p className="text-white/60 text-sm">123 Industrial Way, Suite 456, Construction City</p>
                 </div>
               </li>
-              <li className="flex gap-4">
+              <li className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                 <div className="text-zyseal-red mt-1">
                   <ArrowUpRight size={18} />
                 </div>
@@ -109,7 +112,7 @@ const Footer = () => {
                   <p className="text-white/60 text-sm">info@zyseal.com</p>
                 </div>
               </li>
-              <li className="flex gap-4">
+              <li className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                 <div className="text-zyseal-red mt-1">
                   <ArrowUpRight size={18} />
                 </div>
@@ -127,12 +130,12 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.5 }}
           transition={{ delay: 0.5, duration: 0.7, ease: "easeOut" }}
-          className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6"
+          className="pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6 text-center md:text-left"
         >
           <p className="text-white/40 text-sm">
             © 2026 Zyseal. All rights reserved.
           </p>
-          <div className="flex gap-8 text-sm text-white/40">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm text-white/40">
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
           </div>

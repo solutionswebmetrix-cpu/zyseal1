@@ -22,11 +22,11 @@ const About = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="relative"
           >
-            <div className="rounded-4xl overflow-hidden shadow-2xl">
+            <div className="rounded-[2rem] md:rounded-4xl overflow-hidden shadow-2xl">
               <img 
                 src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop" 
                 alt="Our Expertise" 
-                className="w-full h-[600px] object-cover"
+                className="w-full h-[400px] md:h-[600px] object-cover"
               />
             </div>
           </motion.div>

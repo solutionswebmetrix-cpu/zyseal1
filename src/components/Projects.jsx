@@ -64,31 +64,31 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-32 px-6 bg-[#F8F9FB] relative overflow-hidden">
+    <section id="projects" className="py-20 md:py-32 px-4 md:px-6 bg-[#F8F9FB] relative overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
-        <div className="absolute -top-24 -left-24 w-96 h-96 bg-zyseal-red/5 rounded-full blur-3xl"></div>
-        <div className="absolute -bottom-24 -right-24 w-96 h-96 bg-zyseal-navy/5 rounded-full blur-3xl"></div>
+        <div className="absolute -top-24 -left-24 w-72 h-72 md:w-96 md:h-96 bg-zyseal-red/5 rounded-full blur-3xl"></div>
+        <div className="absolute -bottom-24 -right-24 w-72 h-72 md:w-96 md:h-96 bg-zyseal-navy/5 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20">
-          <div className="max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-20">
+          <div className="max-w-2xl text-center md:text-left">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="flex items-center gap-3 mb-4"
+              className="flex items-center justify-center md:justify-start gap-3 mb-4"
             >
-              <span className="w-12 h-[2px] bg-zyseal-red"></span>
-              <span className="text-zyseal-red font-bold tracking-[0.2em] uppercase text-xs">Our Portfolio</span>
+              <span className="w-8 md:w-12 h-[2px] bg-zyseal-red"></span>
+              <span className="text-zyseal-red font-bold tracking-[0.2em] uppercase text-[10px] md:text-xs">Our Portfolio</span>
             </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-5xl md:text-6xl font-bold text-zyseal-navy tracking-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-zyseal-navy tracking-tight"
             >
               Delivering <span className="text-zyseal-red italic">Excellence</span>
             </motion.h2>
@@ -98,10 +98,10 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="group mt-8 md:mt-0 flex items-center gap-3 text-zyseal-navy font-bold hover:text-zyseal-red transition-colors"
+            className="group mt-8 md:mt-0 flex items-center justify-center md:justify-start gap-3 text-zyseal-navy font-bold hover:text-zyseal-red transition-colors"
           >
             View All Projects 
-            <span className="w-10 h-10 rounded-full border border-zyseal-navy/10 flex items-center justify-center group-hover:border-zyseal-red transition-colors">
+            <span className="w-8 h-8 md:w-10 md:h-10 rounded-full border border-zyseal-navy/10 flex items-center justify-center group-hover:border-zyseal-red transition-colors">
               →
             </span>
           </motion.button>
@@ -112,7 +112,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8"
         >
           {projects.map((project, index) => (
             <motion.div

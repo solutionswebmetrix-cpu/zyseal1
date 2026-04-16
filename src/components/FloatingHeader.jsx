@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react"
+import { Menu, X } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion"
 
 export default function FloatingHeader() {
   const [scrolled, setScrolled] = useState(false)
   const [scrollUp, setScrollUp] = useState(true)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     let lastScrollY = 0
@@ -55,7 +58,7 @@ export default function FloatingHeader() {
         </div>
 
         <nav
-          className={`flex h-[64px] items-center justify-center rounded-[20px] bg-white/80 backdrop-blur-xl px-8 shadow-[0_8px_32px_rgba(0,0,0,0.04)] border border-white/20 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+          className={`hidden md:flex h-[64px] items-center justify-center rounded-[20px] bg-white/80 backdrop-blur-xl px-8 shadow-[0_8px_32px_rgba(0,0,0,0.04)] border border-white/20 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
             scrolled && !scrollUp
               ? "px-6"
               : "w-auto"
@@ -73,15 +76,21 @@ export default function FloatingHeader() {
                 <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 h-[3px] w-0 bg-zyseal-red rounded-full transition-all duration-300 group-hover:w-full" />
               </li>
             ))}
-            {/* Mobile/Compact indicator */}
-            <li className={`md:hidden ${scrolled && !scrollUp ? "block" : "hidden"}`}>
-              <div className="w-1.5 h-1.5 rounded-full bg-zyseal-navy/20"></div>
-            </li>
           </ul>
         </nav>
 
+        {/* Mobile Menu Toggle */}
+        <div className="md:hidden flex h-[64px] items-center justify-center rounded-[20px] bg-white/80 backdrop-blur-xl px-4 shadow-[0_8px_32px_rgba(0,0,0,0.04)] border border-white/20">
+          <button 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="text-zyseal-navy"
+          >
+            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
+
         <div
-          className={`flex h-[64px] items-center justify-center rounded-[20px] bg-white/80 backdrop-blur-xl px-2 shadow-[0_8px_32px_rgba(0,0,0,0.04)] border border-white/20 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+          className={`hidden sm:flex h-[64px] items-center justify-center rounded-[20px] bg-white/80 backdrop-blur-xl px-2 shadow-[0_8px_32px_rgba(0,0,0,0.04)] border border-white/20 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] ${
             scrolled && !scrollUp
               ? "w-[120px]"
               : "w-[150px]"
@@ -92,6 +101,35 @@ export default function FloatingHeader() {
           </button>
         </div>      
       </div>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="absolute top-24 left-6 right-6 bg-white/95 backdrop-blur-2xl rounded-[32px] p-8 shadow-2xl border border-white/20 md:hidden pointer-events-auto"
+          >
+            <ul className="flex flex-col gap-6">
+              {navLinks.map((item) => (
+                <li 
+                  key={item}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="text-xl font-bold text-zyseal-navy hover:text-zyseal-red transition-colors"
+                >
+                  {item}
+                </li>
+              ))}
+              <li className="pt-4">
+                <button className="w-full py-4 rounded-2xl bg-zyseal-navy text-white font-bold">
+                  Contact Us
+                </button>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </header>
   )
 }

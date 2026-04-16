@@ -14,7 +14,7 @@ const Counter = ({ value, suffix = "" }) => {
   }, [isInView, spring, value]);
 
   return (
-    <motion.span ref={ref} className="text-5xl md:text-6xl font-bold text-white block mb-2">
+    <motion.span ref={ref} className="text-4xl md:text-5xl lg:text-6xl font-bold text-white block mb-2">
       {display}
     </motion.span>
   );
@@ -29,14 +29,14 @@ const Stats = () => {
   ];
 
   return (
-    <section className="py-20 bg-zyseal-navy relative overflow-hidden">
+    <section className="py-16 md:py-20 bg-zyseal-navy relative overflow-hidden">
       {/* Decorative background elements */}
       <div className="absolute top-0 left-0 w-full h-full opacity-10">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-zyseal-red skew-x-12"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 text-center">
+      <div className="container mx-auto px-4 md:px-6 relative z-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 text-center">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
