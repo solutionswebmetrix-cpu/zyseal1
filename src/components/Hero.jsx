@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Zap } from 'lucide-react';
 import heroPoster from '../assets/hero.png';
+import bannerVideo from '../assets/Banner.mp4';
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -12,8 +13,8 @@ const Hero = () => {
       videoRef.current.muted = true;
       const playPromise = videoRef.current.play();
       if (playPromise !== undefined) {
-        playPromise.catch(() => {
-          // Auto-play was prevented
+        playPromise.catch((error) => {
+          console.log("Auto-play prevented:", error);
         });
       }
     }
@@ -33,6 +34,7 @@ const Hero = () => {
           className="w-full h-full object-cover opacity-60"
         >
           <source src="/banner.mp4" type="video/mp4" />
+          <source src={bannerVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-zyseal-navy via-zyseal-navy/80 to-transparent"></div>
