@@ -1,13 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { CheckCircle2, Award, Users, Target } from 'lucide-react';
+import { CheckCircle2, Target } from 'lucide-react';
 
 const About = () => {
-  const stats = [
-    { icon: <Award className="w-6 h-6" />, label: "Certified Excellence", text: "ISO 9001:2015" },
-    { icon: <Users className="w-6 h-6" />, label: "Expert Team", text: "50+ Professionals" },
-  ];
-
   const benefits = [
     "Premium Quality Materials",
     "Eco-friendly Solutions",
@@ -33,26 +28,6 @@ const About = () => {
                 alt="Our Expertise" 
                 className="w-full h-[600px] object-cover"
               />
-            </div>
-            
-            {/* Overlay stats cards */}
-            <div className="absolute -bottom-10 -right-10 hidden xl:flex flex-col gap-4">
-              {stats.map((stat, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, y: 50 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.5 }}
-                  transition={{ delay: 0.5 + i * 0.2, duration: 0.6 }}
-                  className="bg-white p-6 rounded-3xl shadow-premium border border-zyseal-gray min-w-[240px]"
-                >
-                  <div className="w-12 h-12 rounded-2xl bg-zyseal-red/10 text-zyseal-red flex items-center justify-center mb-4">
-                    {stat.icon}
-                  </div>
-                  <p className="text-sm text-zyseal-navy/60 font-medium">{stat.label}</p>
-                  <p className="text-xl font-bold text-zyseal-navy">{stat.text}</p>
-                </motion.div>
-              ))}
             </div>
           </motion.div>
 
