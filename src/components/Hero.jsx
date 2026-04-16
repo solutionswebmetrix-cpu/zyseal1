@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Zap } from 'lucide-react';
+import bannerVideo from '../assets/banner2.mp4';
 
 const Hero = () => {
   return (
@@ -14,7 +15,7 @@ const Hero = () => {
           playsInline 
           className="w-full h-full object-cover opacity-60"
         >
-          <source src="/banner2.mp4" type="video/mp4" />
+          <source src={bannerVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-gradient-to-r from-zyseal-navy via-zyseal-navy/80 to-transparent"></div>
