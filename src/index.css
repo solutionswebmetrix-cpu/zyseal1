@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+@theme {
+  --color-zyseal-navy: #0A2342;
+  --color-zyseal-blue: #163B65;
+  --color-zyseal-red: #F42525;
+  --color-zyseal-white: #FFFFFF;
+  --color-zyseal-gray: #F4F6F8;
+  --color-habitline-bg: #F8F9FB;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  
+  --radius-4xl: 2rem;
+  
+  --shadow-premium: 0 10px 30px -5px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+  --shadow-premium-hover: 0 20px 40px -10px rgba(0, 0, 0, 0.08), 0 8px 12px -4px rgba(0, 0, 0, 0.04);
+  --shadow-habitline: 0 24px 48px -12px rgba(0, 0, 0, 0.08);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply antialiased;
+  }
+  body {
+    @apply font-sans text-zyseal-navy bg-[#F8F9FB];
+  }
+}
+
+@layer components {
+  .glass-header {
+    @apply backdrop-blur-2xl bg-white/70 border border-white/20 shadow-[0_8px_32px_rgba(0,0,0,0.04)];
+  }
+  .section-padding {
+    @apply py-32 px-6 md:px-12 lg:px-24;
+  }
+  .premium-card {
+    @apply bg-white rounded-[32px] p-10 shadow-premium transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] hover:shadow-habitline hover:-translate-y-2 border border-gray-50;
+  }
+  .btn-primary {
+    @apply px-10 py-4 bg-zyseal-navy text-white rounded-2xl font-bold transition-all duration-500 hover:bg-zyseal-red hover:shadow-xl hover:shadow-zyseal-red/20 active:scale-95;
+  }
+  .btn-secondary {
+    @apply px-10 py-4 border-2 border-zyseal-navy text-zyseal-navy rounded-2xl font-bold transition-all duration-500 hover:bg-zyseal-navy hover:text-white active:scale-95;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-zyseal-gray);
+}
+::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--color-zyseal-navy) 30%, transparent);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--color-zyseal-navy) 50%, transparent);
+}
