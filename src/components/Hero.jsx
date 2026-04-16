@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Shield, Zap } from 'lucide-react';
 import heroPoster from '../assets/hero.png';
+import bannerVideo from '../assets/banner.mp4';
 
 const Hero = () => {
   const videoRef = useRef(null);
@@ -10,9 +11,12 @@ const Hero = () => {
     if (videoRef.current) {
       videoRef.current.defaultMuted = true;
       videoRef.current.muted = true;
-      videoRef.current.play().catch(error => {
-        console.error("Video play failed:", error);
-      });
+      const playPromise = videoRef.current.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(() => {
+          // Auto-play was prevented
+        });
+      }
     }
   }, []);
 
@@ -26,18 +30,10 @@ const Hero = () => {
           loop 
           muted 
           playsInline 
-          webkit-playsinline="true"
-          x5-playsinline="true"
-          preload="auto"
           poster={heroPoster}
+          src={bannerVideo}
           className="w-full h-full object-cover opacity-60"
-          style={{ background: '#000' }}
-        >
-          <source src="/banner2.mp4" type="video/mp4" />
-          {/* Fallback for production paths */}
-          <source src="./banner2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-zyseal-navy via-zyseal-navy/80 to-transparent"></div>
       </div>
 
