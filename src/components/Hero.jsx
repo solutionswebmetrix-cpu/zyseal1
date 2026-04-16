@@ -31,9 +31,11 @@ const Hero = () => {
           muted 
           playsInline 
           poster={heroPoster}
-          src={bannerVideo}
           className="w-full h-full object-cover opacity-60"
-        />
+        >
+          <source src={bannerVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-gradient-to-r from-zyseal-navy via-zyseal-navy/80 to-transparent"></div>
       </div>
 
